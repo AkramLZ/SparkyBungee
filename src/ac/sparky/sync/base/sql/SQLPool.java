@@ -42,6 +42,8 @@ public class SQLPool {
                 while(resultSet.next()) {
                     currentPlayers.add(resultSet.getString("PlayerName"));
                 }
+                resultSet.close();
+                preparedStatement.close();
             } catch (SQLException exception) {
             }
             String banCommand = MainBungee.getInstance().getConfig().getString("sync.ban-command");

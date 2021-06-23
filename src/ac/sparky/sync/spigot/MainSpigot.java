@@ -12,6 +12,7 @@ public class MainSpigot extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        saveDefaultConfig();
         SparkyBungee.init(PluginType.SPIGOT);
         getServer().getPluginManager().registerEvents(new BanListener(), this);
     }

@@ -5,6 +5,7 @@ import ac.sparky.sync.bungee.MainBungee;
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PluginMessageEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
@@ -13,6 +14,8 @@ public class PluginMessageListener implements Listener {
     @EventHandler
     public void onMessage(PluginMessageEvent event) {
         String channel = event.getTag();
+        if(event.getSender() instanceof ProxiedPlayer)
+            return;
         if(event.isCancelled() || !channel.equals("sparky:ban"))
             return;
         event.setCancelled(true);

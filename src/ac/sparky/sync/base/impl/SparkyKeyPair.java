@@ -19,14 +19,20 @@ public class SparkyKeyPair {
     private KeyPair pair;
 
     public SparkyKeyPair(PluginType type) {
+        String keysFolder = null;
         if(type == PluginType.BUNGEE) {
-            publicKeyFile = new File(MainBungee.getInstance().getDataFolder() + "public-key.skp");
+            keysFolder = MainBungee.getInstance().getDataFolder() + "/key";
+            publicKeyFile = new File(MainBungee.getInstance().getDataFolder() + "/key/public-key.skp");
             privateKeyFile = new File(MainBungee.getInstance().getDataFolder() + "private-key.skp");
         } else if(type == PluginType.SPIGOT) {
-            publicKeyFile = new File(MainSpigot.getInstance().getDataFolder() + "public-key.skp");
-            privateKeyFile = new File(MainSpigot.getInstance().getDataFolder() + "private-key.skp");
+            keysFolder = MainSpigot.getInstance().getDataFolder() + "/key";
+            publicKeyFile = new File(MainSpigot.getInstance().getDataFolder() + "/key/public-key.skp");
+            privateKeyFile = new File(MainSpigot.getInstance().getDataFolder() + "/key/private-key.skp");
         }
         try {
+            if(!new File(keysFolder).exists()) {
+                new File(keysFolder).mkdir();
+            }
             if(!publicKeyFile.exists() && !privateKeyFile.exists()) {
                 publicKeyFile.createNewFile();
                 privateKeyFile.createNewFile();

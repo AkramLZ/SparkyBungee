@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SparkyBungee" target="1.5" />
+      <module name="SparkyBungee" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
