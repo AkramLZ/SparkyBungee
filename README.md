@@ -9,3 +9,6 @@ When you upload the plugin to your bungeecord and spigot servers you need
 ## For SQL Messaging mode
 - Create MySQL Database
 - Configure your MySQL data in config.yml
+
+# Found any bug?
+You can report in my discord DM iiProCraft#0001
