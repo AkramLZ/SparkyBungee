@@ -25,7 +25,9 @@ public class SparkyBungee {
     public SparkyBungee(PluginType pluginType) {
         this.syncType = SyncType.PLUGIN;
         this.keyPair = new SparkyKeyPair(pluginType);
-        this.synchronizable = new PluginSync();
+        if(pluginType == PluginType.SPIGOT) {
+            this.synchronizable = new PluginSync();
+        }
     }
 
     public SparkyBungee(PluginType pluginType, String host, int port, String name, String pass, String db) {
@@ -76,8 +78,6 @@ public class SparkyBungee {
                 return false;
             }
             if(typeString.equals("PLUGIN")) {
-                String encode = MainBungee.getInstance().getConfig().getString("sync.messaging.encode");
-                String key = MainBungee.getInstance().getConfig().getString("sync.messaging.key");
                 instance = new SparkyBungee(type);
             }
             if(typeString.equals("SQL")) {

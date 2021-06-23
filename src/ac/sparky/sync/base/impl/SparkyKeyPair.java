@@ -23,7 +23,7 @@ public class SparkyKeyPair {
         if(type == PluginType.BUNGEE) {
             keysFolder = MainBungee.getInstance().getDataFolder() + "/key";
             publicKeyFile = new File(MainBungee.getInstance().getDataFolder() + "/key/public-key.skp");
-            privateKeyFile = new File(MainBungee.getInstance().getDataFolder() + "private-key.skp");
+            privateKeyFile = new File(MainBungee.getInstance().getDataFolder() + "/key/private-key.skp");
         } else if(type == PluginType.SPIGOT) {
             keysFolder = MainSpigot.getInstance().getDataFolder() + "/key";
             publicKeyFile = new File(MainSpigot.getInstance().getDataFolder() + "/key/public-key.skp");
