@@ -1,4 +1,6 @@
 # SparkyBungee
+![image](https://user-images.githubusercontent.com/39333271/123156231-f8bcbe00-d460-11eb-9eea-da3604ba5d3d.png)
+
 An addon for Sparky AntiCheat to sync punishments with your BungeeCord Instance.
 
 # How to setup?
