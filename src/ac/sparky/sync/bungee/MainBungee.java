@@ -38,6 +38,8 @@ public class MainBungee extends Plugin {
 
     boolean saveDefaultConfig() {
         try {
+            if(!getDataFolder().exists())
+                getDataFolder().mkdir();
             File file = new File(getDataFolder() + "/config.yml");
             if(!file.exists()) {
                 Files.copy(getResourceAsStream("config.yml"), file.toPath());

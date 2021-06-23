@@ -1,5 +1,5 @@
 name: SparkyBungee
 author: iiProCraft
-version: 1.0-SNAPSHOT
+version: 1.1-SNAPSHOT
 main: ac.sparky.sync.spigot.MainSpigot
 softdepend: [Sparky]
